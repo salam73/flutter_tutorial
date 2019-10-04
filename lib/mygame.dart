@@ -25,7 +25,7 @@ class _MyGameState extends State<MyGame> {
     randomMe();
   }
 
-  final Color myColor= Colors.blue;
+  final Color myColor= Colors.orangeAccent;
 
 
   void randomMe()
