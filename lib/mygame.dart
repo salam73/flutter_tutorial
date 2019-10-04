@@ -41,7 +41,8 @@ class _MyGameState extends State<MyGame> {
     return Scaffold(
       backgroundColor: Colors.red,
       appBar: AppBar(
-        title: Text('Game'),
+        title: Text(widget.title),
+        backgroundColor: Colors.redAccent,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
