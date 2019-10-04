@@ -14,16 +14,19 @@ class MyGame extends StatefulWidget {
 }
 
 class _MyGameState extends State<MyGame> {
-
-
-
   int leftDiceFace=3;
   int rightDiceFace=3;
+  int leftDiceFace2=3;
+  int rightDiceFace2=3;
 
   void changeFace()
   {
+
+
     leftDiceFace=Random().nextInt(6)+1;
     rightDiceFace=Random().nextInt(6)+1;
+    leftDiceFace2=Random().nextInt(6)+1;
+    rightDiceFace2=Random().nextInt(6)+1;
   }
 
 @override
@@ -40,32 +43,65 @@ class _MyGameState extends State<MyGame> {
       appBar: AppBar(
         title: Text('Game'),
       ),
-      body: Center(
-        child: Row(
-          children: <Widget>[
-            Expanded(
-              child: FlatButton(
-                onPressed: (){
-                  setState(() {
-                   changeFace();
-                  });
-                },
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Row(
+            children: <Widget>[
+              Expanded(
+                child: FlatButton(
+                  onPressed: (){
+                    setState(() {
+                      changeFace();
+                    });
+                  },
 
-                child: Image.asset('images/dice$leftDiceFace.png'),
+                  child: Image.asset('images/dice$leftDiceFace.png'),
+                ),
               ),
-            ),
-            Expanded(
-              child: FlatButton(
-                onPressed: (){
-                  setState(() {
-                    changeFace();
-                  });
-                },
-                child: Image.asset('images/dice$rightDiceFace.png'),
+              Expanded(
+                child: FlatButton(
+                  onPressed: (){
+                    setState(() {
+                      changeFace();
+                    });
+                  },
+                  child: Image.asset('images/dice$rightDiceFace.png'),
+                ),
               ),
-            ),
-          ],
-        ),
+            ],
+          ),
+
+          Divider(),
+
+          Row(
+            children: <Widget>[
+              Expanded(
+                child: FlatButton(
+                  onPressed: (){
+                    setState(() {
+                      changeFace();
+                    });
+                  },
+
+                  child: Image.asset('images/dice$leftDiceFace2.png'),
+                ),
+              ),
+              Expanded(
+                child: FlatButton(
+                  onPressed: (){
+                    setState(() {
+                      changeFace();
+                    });
+                  },
+                  child: Image.asset('images/dice$rightDiceFace2.png'),
+                ),
+              ),
+            ],
+          ),
+
+
+        ],
       ),
     );
   }
