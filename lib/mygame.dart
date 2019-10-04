@@ -1,12 +1,13 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'main.dart';
 
 class MyGame extends StatefulWidget {
   MyGame({this.title});
 
   final String title;
+
+
 
   @override
   _MyGameState createState() => _MyGameState();
@@ -14,71 +15,58 @@ class MyGame extends StatefulWidget {
 
 class _MyGameState extends State<MyGame> {
 
-  int leftDiceNumber;
-  int rightDiceNumber;
 
 
-  @override
+  int leftDiceFace=3;
+  int rightDiceFace=3;
+
+  void changeFace()
+  {
+    leftDiceFace=Random().nextInt(6)+1;
+    rightDiceFace=Random().nextInt(6)+1;
+  }
+
+@override
   void initState() {
     // TODO: implement initState
     super.initState();
-    randomMe();
+    changeFace();
   }
-
-  final Color myColor= Colors.orangeAccent;
-
-
-  void randomMe()
-  {
-    leftDiceNumber=Random().nextInt(6)+1;
-    rightDiceNumber=Random().nextInt(6)+1;
-  }
-
 
   @override
   Widget build(BuildContext context) {
-
-
-
     return Scaffold(
-      backgroundColor: myColor,
+      backgroundColor: Colors.red,
       appBar: AppBar(
-        backgroundColor: myColor,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: Text('Game'),
       ),
       body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
         child: Row(
           children: <Widget>[
             Expanded(
               child: FlatButton(
                 onPressed: (){
                   setState(() {
-                   randomMe();
+                   changeFace();
                   });
                 },
-                child: Image.asset('images/dice$leftDiceNumber.png'),
+
+                child: Image.asset('images/dice$leftDiceFace.png'),
               ),
             ),
             Expanded(
               child: FlatButton(
                 onPressed: (){
                   setState(() {
-                  randomMe();
+                    changeFace();
                   });
                 },
-
-                child: Image.asset('images/dice$rightDiceNumber.png'),
+                child: Image.asset('images/dice$rightDiceFace.png'),
               ),
             ),
           ],
         ),
       ),
-
-      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
