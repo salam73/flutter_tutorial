@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tutorial/mygame.dart';
+import 'package:flutter_tutorial/screen/layout1.dart';
 import 'sound.dart';
+import 'coloring.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,7 +14,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
      // home: MyGame(title: 'Flutter Demo Home '),
-      home: Sound(),
+     // home: Sound(),
+      home: SafeArea(
+
+        child: Layout1(),
+      ),
+
     );
   }
 }

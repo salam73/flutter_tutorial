@@ -24,12 +24,12 @@ class Sound extends StatelessWidget {
         body: SafeArea(
           child: Row(
             children: <Widget>[
-              soundKey(color: Colors.green,number: 1),
+              soundKey(color: Color(0xFF2196f3),number: 1),
               soundKey(color: Colors.red, number: 2),
               soundKey(color: Colors.yellow, number: 3),
               soundKey(color: Colors.blue, number: 4),
               NewWidget(color: Colors.orange, number: 5,),
-              NewWidget(color: Colors.lightGreen, number: 6,),
+              NewWidget(color: Color(0xFF2196f3), number: 6,),
             ],
           ),
         ),
